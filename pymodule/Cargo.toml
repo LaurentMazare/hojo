@@ -1,0 +1,15 @@
+[package]
+name = "hojo-pyo3"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "hojo"
+crate-type = ["cdylib"]
+
+[dependencies]
+bincode = { workspace = true }
+byteorder = { workspace = true }
+libc = { workspace = true }
+pyo3 = { workspace = true }
+hojo = { path = "../core" }

@@ -1,0 +1,27 @@
+[package]
+name = "hojo-bin"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "hojo"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { version = "4.2.4", features = ["derive"] }
+env_logger = "0.10.1"
+log = "0.4.20"
+
+bincode = { workspace = true }
+byteorder = { workspace = true }
+libc = { workspace = true }
+pyo3 = { workspace = true, features = ["auto-initialize"] }
+hojo = { path = "../core" }
+
+[profile.release]
+debug = true
+
+[profile.release-no-debug]
+inherits = "release"
+debug = false
